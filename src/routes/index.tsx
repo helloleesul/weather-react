@@ -1,6 +1,8 @@
 import { redirect, RouteObject } from "react-router-dom";
 import App from "@/App.tsx";
 import { ROUTES } from "@/routes/routes.ts";
+import { WeatherPage } from "@/pages/Weather";
+import { CalculatorPage } from "@/pages/Calculator";
 
 const routes: RouteObject[] = [
   {
@@ -13,11 +15,11 @@ const routes: RouteObject[] = [
       },
       {
         path: ROUTES.WEATHER,
-        element: <div>WEATHER</div>,
+        element: <WeatherPage />,
       },
       {
         path: ROUTES.CALCULATOR,
-        element: <div>CALCULATOR</div>,
+        element: <CalculatorPage />,
       },
     ],
   },
