@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import { ROUTES } from "@/routes/routes.ts";
+import { WorkerProvider } from "@/contexts/WorkerContext.tsx";
 
 const backgroundColors = {
   [ROUTES.WEATHER]: "bg-[#6a92c4]",
@@ -14,7 +15,9 @@ function App() {
     <div className={`app-container ${backgroundColors[pathname]}`}>
       <Header />
       <main>
-        <Outlet />
+        <WorkerProvider>
+          <Outlet />
+        </WorkerProvider>
       </main>
     </div>
   );
