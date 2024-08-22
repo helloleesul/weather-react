@@ -9,6 +9,13 @@
     font-family: "pretendard", sans-serif;
   }
 
+  input,
+  button {
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+
   .app-container {
     width: 100%;
     max-width: 480px;
