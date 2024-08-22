@@ -1,5 +1,6 @@
 import WeatherBox from "@/components/WeatherBox";
 import useWorker from "@/hooks/useWorker.ts";
+import getWindDirectionLabel from "@/utils/getWindDirectionLabel.ts";
 
 const WeatherDetails = () => {
   const worker = useWorker();
@@ -18,9 +19,19 @@ const WeatherDetails = () => {
       unit: "%",
     },
     {
+      title: "체감 온도",
+      data: main.feels_like.toFixed(1),
+      unit: "°",
+    },
+    {
       title: "구름",
       data: clouds.all,
       unit: "%",
+    },
+    {
+      title: "기압",
+      data: main.grnd_level.toLocaleString(),
+      unit: "hPa",
     },
     {
       title: "바람 속도",
@@ -28,9 +39,8 @@ const WeatherDetails = () => {
       unit: "m/s",
     },
     {
-      title: "기압",
-      data: main.grnd_level.toLocaleString(),
-      unit: "hPa",
+      title: "바람 방향",
+      data: getWindDirectionLabel(wind.deg),
     },
   ];
 
@@ -38,11 +48,21 @@ const WeatherDetails = () => {
     <div className="grid grid-cols-2 auto-rows-[minmax(200px,_2fr)] gap-4">
       {dataList.map((item, index) => (
         <WeatherBox title={item.title} key={index}>
-          <div className="flex flex-col h-full justify-center -mt-5">
+          <div className="flex flex-col h-full justify-center -mt-5 relative">
             <p className="text-4xl">
               {item.data}
               <span className="font-extralight">{item.unit}</span>
             </p>
+            {item.data === wind.speed && (
+              <>
+                {nowWeather.wind.gust && (
+                  <p className="font-light absolute bottom-0">
+                    강풍: {nowWeather.wind.gust}
+                    {item.unit}
+                  </p>
+                )}
+              </>
+            )}
           </div>
         </WeatherBox>
       ))}
