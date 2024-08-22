@@ -1,12 +1,17 @@
 import { DayWeatherType } from "@/types/weatherDataType.ts";
+import getSameDay from "@/utils/getSameDay.ts";
 
 const DayItem = ({ dt, weather, temp }: DayWeatherType) => {
+  const isSameDay = getSameDay(dt);
+
   return (
     <div className="flex items-center justify-between px-1">
       <span>
-        {new Date(dt * 1000).toLocaleDateString("ko-kr", {
-          weekday: "short",
-        })}
+        {isSameDay
+          ? "오늘"
+          : new Date(dt * 1000).toLocaleDateString("ko-kr", {
+              weekday: "short",
+            })}
       </span>
       <img
         width={50}
