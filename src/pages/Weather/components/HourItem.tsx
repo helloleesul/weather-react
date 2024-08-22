@@ -1,4 +1,4 @@
-import { HourlyWeatherType } from "@/types/weather.ts";
+import { HourlyWeatherType } from "@/types/weatherDataType.ts";
 
 const HourItem = ({ dt_txt, weather, main }: HourlyWeatherType) => {
   return (

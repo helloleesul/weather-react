@@ -1,4 +1,4 @@
-import { DayWeatherType } from "@/types/weather.ts";
+import { DayWeatherType } from "@/types/weatherDataType.ts";
 
 const DayItem = ({ dt, weather, temp }: DayWeatherType) => {
   return (
