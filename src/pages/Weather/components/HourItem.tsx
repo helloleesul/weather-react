@@ -1,12 +1,21 @@
-import { HourlyWeatherType } from "@/types/weatherDataType.ts";
+import { HourlyWeatherType, NowWeatherType } from "@/types/weatherDataType.ts";
+import getSameHour from "@/utils/getSameHour.ts";
 
-const HourItem = ({ dt_txt, weather, main }: HourlyWeatherType) => {
+const HourItem = ({
+  dt,
+  weather,
+  main,
+}: HourlyWeatherType | NowWeatherType) => {
+  const isSameHour = getSameHour(dt);
+
   return (
     <>
       <span className="text-xs opacity-85">
-        {new Date(dt_txt).toLocaleTimeString("ko-kr", {
-          hour: "numeric",
-        })}
+        {isSameHour
+          ? "지금"
+          : new Date(dt * 1000).toLocaleTimeString("ko-kr", {
+              hour: "numeric",
+            })}
       </span>
       <img
         width={50}
