@@ -1,8 +1,14 @@
-import { NOW_TEST } from "@/constants/mockData.ts";
-import { NowWeatherType } from "@/types/weather.ts";
+import useWorker from "@/hooks/useWorker.ts";
 
 const WeatherNow = () => {
-  const { name, main, weather }: NowWeatherType = NOW_TEST;
+  const worker = useWorker();
+  const nowWeather = worker?.weather?.now;
+
+  if (!nowWeather) {
+    return <div>Loading...</div>;
+  }
+
+  const { name, main, weather } = nowWeather;
 
   return (
     <section className="text-white">

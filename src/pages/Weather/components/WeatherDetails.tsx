@@ -1,9 +1,15 @@
 import WeatherBox from "@/components/WeatherBox";
-import { NowWeatherType } from "@/types/weather.ts";
-import { NOW_TEST } from "@/constants/mockData.ts";
+import useWorker from "@/hooks/useWorker.ts";
 
 const WeatherDetails = () => {
-  const { main, clouds, wind }: NowWeatherType = NOW_TEST;
+  const worker = useWorker();
+  const nowWeather = worker?.weather?.now;
+
+  if (!nowWeather) {
+    return <div>Loading...</div>;
+  }
+
+  const { main, clouds, wind } = nowWeather;
 
   const dataList = [
     {
