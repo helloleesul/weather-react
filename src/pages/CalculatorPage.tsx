@@ -1,5 +1,5 @@
 import useCalculator from "@/hooks/useCalculator.ts";
-import { buttonList } from "@/constants/calculatorElements.ts";
+import { CALCULATOR_BUTTONS } from "@/constants/elements.ts";
 
 const buttonStyle = {
   number: "text-[40px] bg-[#333333] text-white",
@@ -7,7 +7,7 @@ const buttonStyle = {
   setting: "text-3xl bg-[#a5a5a5] text-[#111111] font-medium",
 };
 
-const Calculator = () => {
+const CalculatorPage = () => {
   const { input, handleInput, onCalculator, onAllClean } = useCalculator();
 
   const handleClick: { [key: string]: () => void } = {
@@ -24,7 +24,7 @@ const Calculator = () => {
         readOnly
       />
       <section className="grid grid-cols-4 gap-2.5">
-        {buttonList.map((item, index) => (
+        {CALCULATOR_BUTTONS.map((item, index) => (
           <button
             key={index}
             value={item.value}
@@ -39,4 +39,4 @@ const Calculator = () => {
   );
 };
 
-export default Calculator;
+export default CalculatorPage;
