@@ -1,6 +1,9 @@
-import { ButtonType } from "@/types/calculatorElementsType.ts";
+import {
+  CalculatorElementsType,
+  WeatherImageMapType,
+} from "@/types/elementsType.ts";
 
-export const buttonList: ButtonType[] = [
+export const CALCULATOR_BUTTONS: CalculatorElementsType[] = [
   {
     value: "7",
     className: "number",
@@ -71,4 +74,10 @@ export const buttonList: ButtonType[] = [
     text: "÷",
     className: "operator",
   },
+];
+
+export const WEATHER_IMAGE_MAP_BUTTONS: WeatherImageMapType[] = [
+  { label: "기온", value: "TA2" },
+  { label: "강수량", value: "PAR0" },
+  { label: "풍향", value: "WND" },
 ];
