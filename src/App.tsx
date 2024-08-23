@@ -1,7 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "@/components/Header";
+import Header from "@/components/Layout/Header.tsx";
 import { ROUTES } from "@/routes/routes.ts";
-import { WorkerProvider } from "@/contexts/WorkerContext.tsx";
+import { useEffect } from "react";
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const backgroundStyle = {
   [ROUTES.WEATHER]: "bg-[#6a92c4]",
@@ -14,14 +15,17 @@ const positionStyle = {
 
 function App() {
   const { pathname } = useLocation();
+  const { startWorker } = useWeatherStore();
+
+  useEffect(() => {
+    startWorker();
+  }, [startWorker]);
 
   return (
     <div className={`app-container ${backgroundStyle[pathname]}`}>
       <Header />
       <main className={positionStyle[pathname]}>
-        <WorkerProvider>
-          <Outlet />
-        </WorkerProvider>
+        <Outlet />
       </main>
     </div>
   );
