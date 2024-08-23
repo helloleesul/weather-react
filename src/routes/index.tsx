@@ -1,13 +1,16 @@
+import { lazy } from "react";
 import { redirect, RouteObject } from "react-router-dom";
-import App from "@/App.tsx";
 import { ROUTES } from "@/routes/routes.ts";
-import { WeatherPage } from "@/pages/Weather";
-import { CalculatorPage } from "@/pages/Calculator";
+import App from "@/App.tsx";
+import ErrorPage from "@/pages/ErrorPage.tsx";
+const WeatherPage = lazy(() => import("@/pages/WeatherPage.tsx"));
+const CalculatorPage = lazy(() => import("@/pages/CalculatorPage.tsx"));
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
