@@ -3,72 +3,72 @@ import { ButtonType } from "@/types/calculatorElementsType.ts";
 export const buttonList: ButtonType[] = [
   {
     value: "7",
-    type: "number",
+    className: "number",
   },
   {
     value: "8",
-    type: "number",
+    className: "number",
   },
   {
     value: "9",
-    type: "number",
+    className: "number",
   },
   {
     value: "+",
     text: "+",
-    type: "operator",
+    className: "operator",
   },
   {
     value: "4",
-    type: "number",
+    className: "number",
   },
   {
     value: "5",
-    type: "number",
+    className: "number",
   },
   {
     value: "6",
-    type: "number",
+    className: "number",
   },
   {
     value: "-",
     text: "-",
-    type: "operator",
+    className: "operator",
   },
   {
     value: "1",
-    type: "number",
+    className: "number",
   },
   {
     value: "2",
-    type: "number",
+    className: "number",
   },
   {
     value: "3",
-    type: "number",
+    className: "number",
   },
   {
     value: "*",
     text: "×",
-    type: "operator",
+    className: "operator",
   },
   {
     value: "allClean",
     text: "AC",
-    type: "setting",
+    className: "setting",
   },
   {
     value: "0",
-    type: "number",
+    className: "number",
   },
   {
     value: "calculator",
     text: "=",
-    type: "operator",
+    className: "operator",
   },
   {
     value: "/",
     text: "÷",
-    type: "operator",
+    className: "operator",
   },
 ];

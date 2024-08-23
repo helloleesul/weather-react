@@ -28,7 +28,7 @@ const Calculator = () => {
           <button
             key={index}
             value={item.value}
-            className={`border-none h-[96px] rounded-full cursor-pointer ${buttonStyle[item.type]}`}
+            className={`border-none h-[96px] rounded-full cursor-pointer ${buttonStyle[item.className]}`}
             onClick={handleClick[item.value] || handleInput}
           >
             {item.text || item.value}
