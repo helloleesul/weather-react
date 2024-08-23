@@ -1,14 +1,11 @@
-import WeatherBox from "@/components/WeatherBox";
-import useWorker from "@/hooks/useWorker.ts";
+import WeatherBox from "@/components/Layout/WeatherBox.tsx";
 import getWindDirectionLabel from "@/utils/getWindDirectionLabel.ts";
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const WeatherDetails = () => {
-  const worker = useWorker();
-  const nowWeather = worker?.weather?.now;
+  const nowWeather = useWeatherStore((state) => state.weather.now);
 
-  if (!nowWeather) {
-    return <div>Loading...</div>;
-  }
+  if (!nowWeather) return;
 
   const { main, clouds, wind } = nowWeather;
 

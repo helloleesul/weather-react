@@ -1,12 +1,9 @@
-import useWorker from "@/hooks/useWorker.ts";
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const WeatherNow = () => {
-  const worker = useWorker();
-  const nowWeather = worker?.weather?.now;
+  const nowWeather = useWeatherStore((state) => state.weather.now);
 
-  if (!nowWeather) {
-    return <div>Loading...</div>;
-  }
+  if (!nowWeather) return;
 
   const { name, main, weather } = nowWeather;
 
@@ -19,7 +16,7 @@ const WeatherNow = () => {
       </h1>
       <div className="text-lg flex items-center justify-center gap-2">
         <p>최고: {main.temp_max.toFixed(1)}°</p>
-        <span>|</span>
+        <span className="font-extralight">|</span>
         <p>최저: {main.temp_min.toFixed(1)}°</p>
       </div>
     </section>

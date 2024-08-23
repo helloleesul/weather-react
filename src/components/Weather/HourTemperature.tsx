@@ -3,17 +3,17 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import WeatherBox from "@/components/WeatherBox";
-import HourItem from "@/pages/Weather/components/HourItem.tsx";
+import WeatherBox from "@/components/Layout/WeatherBox.tsx";
+import HourItem from "@/components/Weather/HourItem.tsx";
 import { HourlyWeatherType } from "@/types/weatherDataType.ts";
-import useWorker from "@/hooks/useWorker.ts";
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const HourTemperature = () => {
-  const worker = useWorker();
-  const hourWeather = worker?.weather?.hour;
-  const nowWeather = worker?.weather?.now;
+  const hourWeather = useWeatherStore((state) => state.weather.hour);
+  const nowWeather = useWeatherStore((state) => state.weather.now);
 
-  if (!nowWeather) return;
+  if (!nowWeather || !hourWeather?.length) return;
+
   return (
     <WeatherBox
       title={
@@ -28,7 +28,7 @@ const HourTemperature = () => {
         <SwiperSlide className="text-center">
           <HourItem {...nowWeather} />
         </SwiperSlide>
-        {hourWeather?.map((item: HourlyWeatherType) => (
+        {hourWeather.map((item: HourlyWeatherType) => (
           <SwiperSlide key={item.dt} className="text-center">
             <HourItem {...item} />
           </SwiperSlide>
