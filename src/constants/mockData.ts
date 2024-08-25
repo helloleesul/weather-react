@@ -1,0 +1,1150 @@
+import {
+  DayWeatherType,
+  HourlyWeatherType,
+  NowWeatherType,
+} from "@/types/weatherDataType.ts";
+
+export const HOUR_TEST_LIST: HourlyWeatherType[] = [
+  {
+    dt: 1724133600,
+    main: {
+      temp: 34.76,
+      feels_like: 41.76,
+      temp_min: 34.76,
+      temp_max: 35.26,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 55,
+      temp_kf: -0.5,
+    },
+    weather: [
+      {
+        id: 803,
+        main: "Clouds",
+        description: "튼구름",
+        icon: "04d",
+      },
+    ],
+    clouds: {
+      all: 75,
+    },
+    wind: {
+      speed: 2.38,
+      deg: 153,
+      gust: 4.05,
+    },
+    visibility: 10000,
+    pop: 0.29,
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 06:00:00",
+  },
+  {
+    dt: 1724137200,
+    main: {
+      temp: 34.55,
+      feels_like: 41.55,
+      temp_min: 33.7,
+      temp_max: 34.55,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 56,
+      temp_kf: 0.85,
+    },
+    weather: [
+      {
+        id: 803,
+        main: "Clouds",
+        description: "튼구름",
+        icon: "04d",
+      },
+    ],
+    clouds: {
+      all: 80,
+    },
+    wind: {
+      speed: 1.86,
+      deg: 201,
+      gust: 3.81,
+    },
+    visibility: 10000,
+    pop: 0.76,
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 07:00:00",
+  },
+  {
+    dt: 1724140800,
+    main: {
+      temp: 33.74,
+      feels_like: 40.74,
+      temp_min: 32.2,
+      temp_max: 33.74,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 60,
+      temp_kf: 1.54,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 85,
+    },
+    wind: {
+      speed: 1.48,
+      deg: 209,
+      gust: 3.48,
+    },
+    visibility: 9269,
+    pop: 1,
+    rain: {
+      "1h": 0.61,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 08:00:00",
+  },
+  {
+    dt: 1724144400,
+    main: {
+      temp: 31.92,
+      feels_like: 38.92,
+      temp_min: 30.02,
+      temp_max: 31.92,
+      pressure: 1008,
+      sea_level: 1008,
+      grnd_level: 1002,
+      humidity: 70,
+      temp_kf: 1.9,
+    },
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 89,
+    },
+    wind: {
+      speed: 0.91,
+      deg: 246,
+      gust: 1.46,
+    },
+    visibility: 9935,
+    pop: 1,
+    rain: {
+      "1h": 1.92,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 09:00:00",
+  },
+  {
+    dt: 1724148000,
+    main: {
+      temp: 30.28,
+      feels_like: 37.28,
+      temp_min: 29.16,
+      temp_max: 30.28,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1002,
+      humidity: 78,
+      temp_kf: 1.12,
+    },
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 93,
+    },
+    wind: {
+      speed: 0.67,
+      deg: 229,
+      gust: 0.94,
+    },
+    visibility: 6877,
+    pop: 1,
+    rain: {
+      "1h": 1.77,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 10:00:00",
+  },
+  {
+    dt: 1724151600,
+    main: {
+      temp: 28.76,
+      feels_like: 34.7,
+      temp_min: 28.76,
+      temp_max: 28.76,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 83,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10n",
+      },
+    ],
+    clouds: {
+      all: 85,
+    },
+    wind: {
+      speed: 0.87,
+      deg: 111,
+      gust: 0.93,
+    },
+    visibility: 10000,
+    pop: 1,
+    rain: {
+      "1h": 1.64,
+    },
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 11:00:00",
+  },
+  {
+    dt: 1724155200,
+    main: {
+      temp: 28.39,
+      feels_like: 34.02,
+      temp_min: 28.39,
+      temp_max: 28.39,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 85,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10n",
+      },
+    ],
+    clouds: {
+      all: 75,
+    },
+    wind: {
+      speed: 1.57,
+      deg: 92,
+      gust: 1.74,
+    },
+    visibility: 10000,
+    pop: 1,
+    rain: {
+      "1h": 0.12,
+    },
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 12:00:00",
+  },
+  {
+    dt: 1724158800,
+    main: {
+      temp: 27.96,
+      feels_like: 33.11,
+      temp_min: 27.96,
+      temp_max: 27.96,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 87,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 803,
+        main: "Clouds",
+        description: "튼구름",
+        icon: "04n",
+      },
+    ],
+    clouds: {
+      all: 82,
+    },
+    wind: {
+      speed: 1.7,
+      deg: 93,
+      gust: 2.59,
+    },
+    visibility: 10000,
+    pop: 0.42,
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 13:00:00",
+  },
+  {
+    dt: 1724162400,
+    main: {
+      temp: 27.63,
+      feels_like: 32.3,
+      temp_min: 27.63,
+      temp_max: 27.63,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 88,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10n",
+      },
+    ],
+    clouds: {
+      all: 91,
+    },
+    wind: {
+      speed: 1.69,
+      deg: 94,
+      gust: 2.58,
+    },
+    visibility: 10000,
+    pop: 0.33,
+    rain: {
+      "1h": 0.11,
+    },
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 14:00:00",
+  },
+  {
+    dt: 1724166000,
+    main: {
+      temp: 27.37,
+      feels_like: 31.68,
+      temp_min: 27.37,
+      temp_max: 27.37,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 89,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 804,
+        main: "Clouds",
+        description: "온흐림",
+        icon: "04n",
+      },
+    ],
+    clouds: {
+      all: 94,
+    },
+    wind: {
+      speed: 1.84,
+      deg: 87,
+      gust: 3.21,
+    },
+    visibility: 10000,
+    pop: 0.43,
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 15:00:00",
+  },
+  {
+    dt: 1724169600,
+    main: {
+      temp: 27.1,
+      feels_like: 30.91,
+      temp_min: 27.1,
+      temp_max: 27.1,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 89,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 804,
+        main: "Clouds",
+        description: "온흐림",
+        icon: "04n",
+      },
+    ],
+    clouds: {
+      all: 96,
+    },
+    wind: {
+      speed: 1.77,
+      deg: 97,
+      gust: 4.62,
+    },
+    visibility: 10000,
+    pop: 0.51,
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 16:00:00",
+  },
+  {
+    dt: 1724173200,
+    main: {
+      temp: 26.91,
+      feels_like: 30.38,
+      temp_min: 26.91,
+      temp_max: 26.91,
+      pressure: 1009,
+      sea_level: 1009,
+      grnd_level: 1003,
+      humidity: 89,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 804,
+        main: "Clouds",
+        description: "온흐림",
+        icon: "04n",
+      },
+    ],
+    clouds: {
+      all: 94,
+    },
+    wind: {
+      speed: 2.03,
+      deg: 93,
+      gust: 5.92,
+    },
+    visibility: 10000,
+    pop: 0.57,
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 17:00:00",
+  },
+  {
+    dt: 1724176800,
+    main: {
+      temp: 26.75,
+      feels_like: 29.94,
+      temp_min: 26.75,
+      temp_max: 26.75,
+      pressure: 1008,
+      sea_level: 1008,
+      grnd_level: 1002,
+      humidity: 89,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10n",
+      },
+    ],
+    clouds: {
+      all: 94,
+    },
+    wind: {
+      speed: 2.33,
+      deg: 93,
+      gust: 6.71,
+    },
+    visibility: 10000,
+    pop: 0.6,
+    rain: {
+      "1h": 0.11,
+    },
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 18:00:00",
+  },
+  {
+    dt: 1724180400,
+    main: {
+      temp: 26.47,
+      feels_like: 26.47,
+      temp_min: 26.47,
+      temp_max: 26.47,
+      pressure: 1008,
+      sea_level: 1008,
+      grnd_level: 1002,
+      humidity: 90,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10n",
+      },
+    ],
+    clouds: {
+      all: 99,
+    },
+    wind: {
+      speed: 2.15,
+      deg: 94,
+      gust: 5.37,
+    },
+    visibility: 10000,
+    pop: 0.94,
+    rain: {
+      "1h": 0.19,
+    },
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 19:00:00",
+  },
+  {
+    dt: 1724184000,
+    main: {
+      temp: 26.15,
+      feels_like: 26.15,
+      temp_min: 26.15,
+      temp_max: 26.15,
+      pressure: 1006,
+      sea_level: 1006,
+      grnd_level: 1000,
+      humidity: 92,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10n",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 2.72,
+      deg: 96,
+      gust: 8.45,
+    },
+    visibility: 10000,
+    pop: 0.96,
+    rain: {
+      "1h": 0.28,
+    },
+    sys: {
+      pod: "n",
+    },
+    dt_txt: "2024-08-20 20:00:00",
+  },
+  {
+    dt: 1724187600,
+    main: {
+      temp: 25.72,
+      feels_like: 26.8,
+      temp_min: 25.72,
+      temp_max: 25.72,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 94,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 2.91,
+      deg: 97,
+      gust: 9.02,
+    },
+    visibility: 9979,
+    pop: 1,
+    rain: {
+      "1h": 1.51,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 21:00:00",
+  },
+  {
+    dt: 1724191200,
+    main: {
+      temp: 25.78,
+      feels_like: 26.84,
+      temp_min: 25.78,
+      temp_max: 25.78,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 93,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 3.55,
+      deg: 110,
+      gust: 11.33,
+    },
+    visibility: 5544,
+    pop: 1,
+    rain: {
+      "1h": 1.76,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 22:00:00",
+  },
+  {
+    dt: 1724194800,
+    main: {
+      temp: 25.54,
+      feels_like: 26.63,
+      temp_min: 25.54,
+      temp_max: 25.54,
+      pressure: 1005,
+      sea_level: 1005,
+      grnd_level: 999,
+      humidity: 95,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 502,
+        main: "Rain",
+        description: "강한 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 4.86,
+      deg: 131,
+      gust: 12.85,
+    },
+    visibility: 2851,
+    pop: 1,
+    rain: {
+      "1h": 12.71,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-20 23:00:00",
+  },
+  {
+    dt: 1724198400,
+    main: {
+      temp: 25.29,
+      feels_like: 26.41,
+      temp_min: 25.29,
+      temp_max: 25.29,
+      pressure: 1006,
+      sea_level: 1006,
+      grnd_level: 999,
+      humidity: 97,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 503,
+        main: "Rain",
+        description: "매우 강한 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 3.73,
+      deg: 142,
+      gust: 11.87,
+    },
+    visibility: 1513,
+    pop: 1,
+    rain: {
+      "1h": 17.36,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-21 00:00:00",
+  },
+  {
+    dt: 1724202000,
+    main: {
+      temp: 25.31,
+      feels_like: 26.43,
+      temp_min: 25.31,
+      temp_max: 25.31,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 97,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 502,
+        main: "Rain",
+        description: "강한 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 4.21,
+      deg: 140,
+      gust: 12.07,
+    },
+    visibility: 3111,
+    pop: 1,
+    rain: {
+      "1h": 15.54,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-21 01:00:00",
+  },
+  {
+    dt: 1724205600,
+    main: {
+      temp: 25.75,
+      feels_like: 26.86,
+      temp_min: 25.75,
+      temp_max: 25.75,
+      pressure: 1008,
+      sea_level: 1008,
+      grnd_level: 1001,
+      humidity: 95,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 502,
+        main: "Rain",
+        description: "강한 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 3.99,
+      deg: 152,
+      gust: 11.48,
+    },
+    visibility: 10000,
+    pop: 1,
+    rain: {
+      "1h": 6.81,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-21 02:00:00",
+  },
+  {
+    dt: 1724209200,
+    main: {
+      temp: 26.2,
+      feels_like: 26.2,
+      temp_min: 26.2,
+      temp_max: 26.2,
+      pressure: 1008,
+      sea_level: 1008,
+      grnd_level: 1001,
+      humidity: 94,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 3.49,
+      deg: 149,
+      gust: 10.41,
+    },
+    visibility: 10000,
+    pop: 1,
+    rain: {
+      "1h": 0.92,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-21 03:00:00",
+  },
+  {
+    dt: 1724212800,
+    main: {
+      temp: 26.93,
+      feels_like: 30.64,
+      temp_min: 26.93,
+      temp_max: 26.93,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 91,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 3.53,
+      deg: 160,
+      gust: 10.03,
+    },
+    visibility: 10000,
+    pop: 1,
+    rain: {
+      "1h": 0.5,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-21 04:00:00",
+  },
+  {
+    dt: 1724216400,
+    main: {
+      temp: 27.9,
+      feels_like: 32.94,
+      temp_min: 27.9,
+      temp_max: 27.9,
+      pressure: 1007,
+      sea_level: 1007,
+      grnd_level: 1001,
+      humidity: 87,
+      temp_kf: 0,
+    },
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10d",
+      },
+    ],
+    clouds: {
+      all: 100,
+    },
+    wind: {
+      speed: 3.39,
+      deg: 169,
+      gust: 9.45,
+    },
+    visibility: 10000,
+    pop: 1,
+    rain: {
+      "1h": 0.58,
+    },
+    sys: {
+      pod: "d",
+    },
+    dt_txt: "2024-08-21 05:00:00",
+  },
+];
+
+export const DAY_TEST_LIST: DayWeatherType[] = [
+  {
+    dt: 1724122800,
+    sunrise: 1724100738,
+    sunset: 1724149142,
+    temp: {
+      day: 34.37,
+      min: 26.31,
+      max: 34.77,
+      night: 27.49,
+      eve: 31.93,
+      morn: 26.31,
+    },
+    feels_like: {
+      day: 38.86,
+      night: 31.9,
+      eve: 38.93,
+      morn: 26.31,
+    },
+    pressure: 1009,
+    humidity: 49,
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10d",
+      },
+    ],
+    speed: 3.29,
+    deg: 127,
+    gust: 4.33,
+    clouds: 97,
+    pop: 1,
+    rain: 5.53,
+  },
+  {
+    dt: 1724209200,
+    sunrise: 1724187189,
+    sunset: 1724235462,
+    temp: {
+      day: 25.99,
+      min: 25.22,
+      max: 27.21,
+      night: 25.31,
+      eve: 25.86,
+      morn: 25.66,
+    },
+    feels_like: {
+      day: 25.99,
+      night: 26.4,
+      eve: 27.01,
+      morn: 26.74,
+    },
+    pressure: 1008,
+    humidity: 93,
+    weather: [
+      {
+        id: 502,
+        main: "Rain",
+        description: "강한 비",
+        icon: "10d",
+      },
+    ],
+    speed: 4.92,
+    deg: 128,
+    gust: 12.49,
+    clouds: 100,
+    pop: 1,
+    rain: 45.6,
+  },
+  {
+    dt: 1724295600,
+    sunrise: 1724273640,
+    sunset: 1724321782,
+    temp: {
+      day: 28.93,
+      min: 25.29,
+      max: 29.2,
+      night: 25.54,
+      eve: 27.73,
+      morn: 25.33,
+    },
+    feels_like: {
+      day: 35.65,
+      night: 26.66,
+      eve: 32.75,
+      morn: 26.43,
+    },
+    pressure: 1005,
+    humidity: 85,
+    weather: [
+      {
+        id: 501,
+        main: "Rain",
+        description: "보통 비",
+        icon: "10d",
+      },
+    ],
+    speed: 4.87,
+    deg: 206,
+    gust: 10.17,
+    clouds: 99,
+    pop: 1,
+    rain: 16.54,
+  },
+  {
+    dt: 1724382000,
+    sunrise: 1724360092,
+    sunset: 1724408101,
+    temp: {
+      day: 30.39,
+      min: 24.24,
+      max: 31.37,
+      night: 26.85,
+      eve: 29.41,
+      morn: 24.24,
+    },
+    feels_like: {
+      day: 34.27,
+      night: 29.41,
+      eve: 32.28,
+      morn: 25.23,
+    },
+    pressure: 1008,
+    humidity: 63,
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10d",
+      },
+    ],
+    speed: 3.94,
+    deg: 251,
+    gust: 4.17,
+    clouds: 41,
+    pop: 0.68,
+    rain: 1.49,
+  },
+  {
+    dt: 1724468400,
+    sunrise: 1724446543,
+    sunset: 1724494418,
+    temp: {
+      day: 31.61,
+      min: 24.33,
+      max: 31.61,
+      night: 26.83,
+      eve: 29.44,
+      morn: 24.33,
+    },
+    feels_like: {
+      day: 34.36,
+      night: 28.88,
+      eve: 31.63,
+      morn: 25.25,
+    },
+    pressure: 1009,
+    humidity: 53,
+    weather: [
+      {
+        id: 500,
+        main: "Rain",
+        description: "실 비",
+        icon: "10d",
+      },
+    ],
+    speed: 3.45,
+    deg: 259,
+    gust: 3.16,
+    clouds: 23,
+    pop: 0.53,
+    rain: 0.6,
+  },
+];
+
+export const NOW_TEST: NowWeatherType = {
+  coord: {
+    lon: 126.9778,
+    lat: 37.5683,
+  },
+  weather: [
+    {
+      id: 802,
+      main: "Clouds",
+      description: "구름조금",
+      icon: "03d",
+    },
+  ],
+  base: "stations",
+  main: {
+    temp: 34.76,
+    feels_like: 40.89,
+    temp_min: 34.69,
+    temp_max: 34.76,
+    pressure: 1008,
+    humidity: 52,
+    sea_level: 1008,
+    grnd_level: 1002,
+  },
+  visibility: 10000,
+  wind: {
+    speed: 4.12,
+    deg: 100,
+  },
+  clouds: {
+    all: 40,
+  },
+  dt: 1724128773,
+  sys: {
+    type: 1,
+    id: 8105,
+    country: "KR",
+    sunrise: 1724100738,
+    sunset: 1724149142,
+  },
+  timezone: 32400,
+  id: 1835848,
+  name: "Seoul",
+  cod: 200,
+};

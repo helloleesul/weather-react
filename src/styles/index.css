@@ -1,0 +1,48 @@
+@import "fonts.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "pretendard", sans-serif;
+  }
+
+  input,
+  button {
+    margin: 0;
+    padding: 0;
+    outline: none;
+  }
+
+  .app-container {
+    width: 100%;
+    max-width: 480px;
+    min-width: 320px;
+    height: 100%;
+    min-height: 100dvh;
+    margin: 0 auto;
+
+    padding: 2rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #map {
+    iframe + div {
+      border: none !important;
+    }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
