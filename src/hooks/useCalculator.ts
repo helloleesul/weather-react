@@ -1,26 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { calculate } from "calculator-utils";
+import { useCalculatorStore } from "@/stores/useCalculatorStore.ts";
 
 export default function useCalculator() {
-  // 입력 값
-  const [input, setInput] = useState("");
+  const { updateInput, updateToast, addHistory, handleInput } =
+    useCalculatorStore();
+  const input = useCalculatorStore((state) => state.input);
+  const toast = useCalculatorStore((state) => state.toast);
 
   // 입력 핸들러
-  const handleInput = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onInput = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { value: currentInput } = e.target as HTMLButtonElement;
 
-    setInput((prev) => {
-      const newPrev = [...prev];
-      const lastInput = newPrev[newPrev.length - 1];
-
-      // 연산자 중복으로 입력 시, 마지막으로 선택한 연산자로 입력
-      if (isNaN(Number(lastInput)) && isNaN(Number(currentInput))) {
-        newPrev.pop();
-        newPrev.push(currentInput);
-        return newPrev.join("");
-      }
-      return prev + currentInput;
-    });
+    updateToast("");
+    handleInput(currentInput);
   };
 
   // 모듈 사용해 계산
@@ -28,14 +21,18 @@ export default function useCalculator() {
     const resultValue = calculate(input);
 
     if (isNaN(resultValue)) {
-      // onAllClean();
+      updateToast(resultValue);
     } else {
-      setInput(resultValue);
+      updateInput(resultValue);
+      addHistory({ expression: input, result: resultValue });
     }
   };
 
   // 리셋
-  const onAllClean = () => setInput("");
+  const onAllClean = () => {
+    updateToast("");
+    updateInput("");
+  };
 
-  return { input, handleInput, onCalculator, onAllClean };
+  return { onInput, onCalculator, onAllClean, input, toast };
 }
