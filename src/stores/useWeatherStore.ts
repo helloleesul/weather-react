@@ -17,7 +17,7 @@ interface WeatherState {
   worker: Worker | null;
 }
 
-export const useWeatherStore = create<WeatherState>((set) => {
+export const useWeatherStore = create<WeatherState>()((set) => {
   let worker: Worker | null = null;
 
   return {
