@@ -8,15 +8,17 @@ const Header = () => {
   const nowCity = useWeatherStore((state) => state.weather.now?.name);
 
   return (
-    <header className="sticky top-4 z-10">
+    <header className="sticky top-4 z-10 flex justify-between">
       <Nav />
-      <p className="text-white">{nowCity}</p>
-      <button
-        onClick={worker ? stopWorker : startWorker}
-        className="text-white"
-      >
-        {worker ? <Pause fill="white" /> : <Play fill="white" />}
-      </button>
+      <div className="flex justify-between items-center gap-3">
+        <p className="text-white">{nowCity}</p>
+        <button
+          onClick={worker ? stopWorker : startWorker}
+          className="text-white"
+        >
+          {worker ? <Pause fill="white" /> : <Play fill="white" />}
+        </button>
+      </div>
     </header>
   );
 };

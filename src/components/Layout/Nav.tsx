@@ -10,7 +10,7 @@ const Nav = () => {
             <li key={index}>
               <Link
                 to={item.path}
-                className="inline-block text-white bg-opacity-30 bg-white py-2 px-4 rounded-lg backdrop-blur font-medium shadow-lg"
+                className="inline-block text-white bg-opacity-30 bg-white py-2 px-4 rounded-lg backdrop-blur font-medium"
               >
                 {item.title}
               </Link>

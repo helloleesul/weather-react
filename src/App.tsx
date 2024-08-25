@@ -6,7 +6,7 @@ import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const backgroundStyle = {
   [ROUTES.WEATHER]: "bg-[#6a92c4]",
-  [ROUTES.CALCULATOR]: "bg-black",
+  [ROUTES.CALCULATOR]: "bg-black relative",
 };
 const positionStyle = {
   [ROUTES.WEATHER]: "",
