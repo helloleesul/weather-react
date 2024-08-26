@@ -1,6 +1,6 @@
 import React from "react";
-import { calculate } from "calculator-utils";
 import { useCalculatorStore } from "@/stores/useCalculatorStore.ts";
+import { calculate } from "calculator-utils";
 
 export default function useCalculator() {
   const { updateInput, updateToast, addHistory, handleInput } =
@@ -18,13 +18,12 @@ export default function useCalculator() {
 
   // 모듈 사용해 계산
   const onCalculator = () => {
-    const resultValue = calculate(input);
-
-    if (isNaN(resultValue)) {
-      updateToast(resultValue);
-    } else {
+    try {
+      const resultValue = calculate(input);
       updateInput(resultValue);
       addHistory({ expression: input, result: resultValue });
+    } catch (error) {
+      if (error instanceof Error) return updateToast(error.message);
     }
   };
 
