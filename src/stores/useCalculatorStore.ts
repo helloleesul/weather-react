@@ -11,10 +11,10 @@ interface CalculatorState {
     | {
         id: string;
         expression: string;
-        result: number;
+        result: string;
       }[]
     | [];
-  addHistory: (value: { expression: string; result: number }) => void;
+  addHistory: (value: { expression: string; result: string }) => void;
   removeHistory: (value: string) => void;
 }
 
@@ -39,9 +39,9 @@ export const useCalculatorStore = create<CalculatorState>()(
       updateInput: (value: string) => set({ input: value }),
       updateToast: (value: string) => set({ toast: value }),
       history: [],
-      addHistory: (value: { expression: string; result: number }) =>
+      addHistory: (value: { expression: string; result: string }) =>
         set((state) => ({
-          history: [{ ...value, id: new Date().toString() }, ...state.history],
+          history: [{ ...value, id: Date.now().toString() }, ...state.history],
         })),
       removeHistory: (value: string) =>
         set((state) => ({
