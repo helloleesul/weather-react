@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { isOperator } from "@/utils/isOperator.ts";
 
 interface CalculatorState {
   input: string;
@@ -28,8 +29,11 @@ export const useCalculatorStore = create<CalculatorState>()(
           const newPrev = [...state.input];
           const lastInput = newPrev[newPrev.length - 1];
 
+          // 맨 처음엔 숫자만 입력
+          if (!newPrev.length && isOperator(value)) return { input: "" };
+
           // 연산자 중복으로 입력 시, 마지막으로 선택한 연산자로 입력
-          if (isNaN(Number(lastInput)) && isNaN(Number(value))) {
+          if (isOperator(lastInput) && isOperator(value)) {
             newPrev.pop();
             newPrev.push(value);
             return { input: newPrev.join("") };
