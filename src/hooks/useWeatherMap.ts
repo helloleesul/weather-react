@@ -43,11 +43,16 @@ export default function useWeatherMap() {
   useEffect(() => {
     if (!nowPosition) return;
 
+    const glyph = document.createElement("span");
+    glyph.textContent = `${nowTemp?.toFixed()}°`;
+    glyph.style.fontSize = "16px";
+
     const pinOptions = new google.maps.marker.PinElement({
       scale: 1.5,
       background: "#3774af",
-      borderColor: "#ffffff",
-      glyph: `${nowTemp?.toFixed()}°`,
+      borderColor: "white",
+      glyph,
+      glyphColor: "white",
     });
 
     const newMarker = new google.maps.marker.AdvancedMarkerElement({
