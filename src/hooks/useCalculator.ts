@@ -1,6 +1,8 @@
 import React from "react";
-import { useCalculatorStore } from "@/stores/useCalculatorStore.ts";
+
 import { calculate } from "calculator-utils";
+
+import { useCalculatorStore } from "@/stores/useCalculatorStore.ts";
 
 export default function useCalculator() {
   const { updateInput, updateToast, addHistory, handleInput } =

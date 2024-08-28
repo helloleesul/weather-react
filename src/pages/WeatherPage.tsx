@@ -1,13 +1,16 @@
-import WeatherNow from "@/components/Weather/WeatherNow.tsx";
-import HourTemperature from "@/components/Weather/HourTemperature.tsx";
+import { Status, Wrapper } from "@googlemaps/react-wrapper";
+
+import { GOOGLE_MAP_API_KEY } from "@/constants/environment.ts";
+
 import DayTemperature from "@/components/Weather/DayTemperature.tsx";
+import HourTemperature from "@/components/Weather/HourTemperature.tsx";
 import WeatherDetails from "@/components/Weather/WeatherDetails.tsx";
 import WeatherMap from "@/components/Weather/WeatherMap.tsx";
+import WeatherNow from "@/components/Weather/WeatherNow.tsx";
 
-import { Status, Wrapper } from "@googlemaps/react-wrapper";
-import { GOOGLE_MAP_API_KEY } from "@/constants/environment.ts";
-import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 import LoadingPage from "@/pages/LoadingPage.tsx";
+
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const render = (status: Status) => {
   switch (status) {

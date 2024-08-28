@@ -1,6 +1,8 @@
-import WeatherBox from "@/components/Layout/WeatherBox.tsx";
 import { DayWeatherType } from "@/types/weatherDataType.ts";
+
+import WeatherBox from "@/components/Layout/WeatherBox.tsx";
 import DayItem from "@/components/Weather/DayItem.tsx";
+
 import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const DayTemperature = () => {

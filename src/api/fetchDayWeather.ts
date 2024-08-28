@@ -1,5 +1,6 @@
-import { WEATHER_API_KEY } from "@/constants/environment.ts";
 import { DayWeatherType } from "@/types/weatherDataType.ts";
+
+import { WEATHER_API_KEY } from "@/constants/environment.ts";
 
 // 일별 날씨
 export const fetchDayWeather = async (city: string) => {

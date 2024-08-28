@@ -1,5 +1,6 @@
-import { NAVIGATION } from "@/constants/navigation.ts";
 import { Link } from "react-router-dom";
+
+import { NAVIGATION } from "@/constants/navigation.ts";
 
 const Nav = () => {
   return (

@@ -1,8 +1,10 @@
 import { useState } from "react";
+
+import { History as HistoryIcon } from "lucide-react";
+
+import Calculators from "@/components/Calculator/Calculators.tsx";
 import History from "@/components/Calculator/History.tsx";
 import Toast from "@/components/Calculator/Toast.tsx";
-import Calculators from "@/components/Calculator/Calculators.tsx";
-import { History as HistoryIcon } from "lucide-react";
 
 const CalculatorPage = () => {
   const [showHistory, setShowHistory] = useState(false);

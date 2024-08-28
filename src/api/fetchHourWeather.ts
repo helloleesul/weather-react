@@ -1,5 +1,6 @@
-import { WEATHER_API_KEY } from "@/constants/environment.ts";
 import { HourlyWeatherType } from "@/types/weatherDataType.ts";
+
+import { WEATHER_API_KEY } from "@/constants/environment.ts";
 
 // 시간별 날씨
 export const fetchHourWeather = async (city: string) => {

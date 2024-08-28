@@ -1,5 +1,6 @@
-import { HourlyWeatherType, NowWeatherType } from "@/types/weatherDataType.ts";
 import getSameHour from "@/utils/getSameHour.ts";
+
+import { HourlyWeatherType, NowWeatherType } from "@/types/weatherDataType.ts";
 
 const HourItem = ({
   dt,

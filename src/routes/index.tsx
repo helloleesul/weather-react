@@ -1,8 +1,12 @@
 import { lazy } from "react";
 import { redirect, RouteObject } from "react-router-dom";
-import { ROUTES } from "@/routes/routes.ts";
+
 import App from "@/App.tsx";
+
 import ErrorPage from "@/pages/ErrorPage.tsx";
+
+import { ROUTES } from "@/routes/routes.ts";
+
 const WeatherPage = lazy(() => import("@/pages/WeatherPage.tsx"));
 const CalculatorPage = lazy(() => import("@/pages/CalculatorPage.tsx"));
 

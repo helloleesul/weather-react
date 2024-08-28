@@ -1,6 +1,8 @@
-import Nav from "@/components/Layout/Nav.tsx";
-import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 import { Pause, Play } from "lucide-react";
+
+import Nav from "@/components/Layout/Nav.tsx";
+
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const Header = () => {
   const { startWorker, stopWorker } = useWeatherStore();
