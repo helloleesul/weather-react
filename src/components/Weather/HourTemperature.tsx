@@ -1,11 +1,13 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { HourlyWeatherType } from "@/types/weatherDataType.ts";
 
 import WeatherBox from "@/components/Layout/WeatherBox.tsx";
 import HourItem from "@/components/Weather/HourItem.tsx";
-import { HourlyWeatherType } from "@/types/weatherDataType.ts";
+
 import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const HourTemperature = () => {

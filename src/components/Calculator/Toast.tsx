@@ -1,4 +1,5 @@
 import { TriangleAlert } from "lucide-react";
+
 import useCalculator from "@/hooks/useCalculator.ts";
 
 const Toast = () => {

@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+
 import { WEATHER_IMAGE_MAP_BUTTONS } from "@/constants/elements.ts";
-import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 import { GOOGLE_MAP_ID, WEATHER_API_KEY } from "@/constants/environment.ts";
+
+import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 export default function useWeatherMap() {
   // 지도 이미지맵

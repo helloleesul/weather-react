@@ -1,5 +1,6 @@
-import { useCalculatorStore } from "@/stores/useCalculatorStore.ts";
 import { Calculator, Trash2, X } from "lucide-react";
+
+import { useCalculatorStore } from "@/stores/useCalculatorStore.ts";
 
 const History = ({ onClose }: { onClose: () => void }) => {
   const { removeHistory } = useCalculatorStore();

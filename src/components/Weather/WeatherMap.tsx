@@ -1,7 +1,10 @@
 import React from "react";
-import WeatherBox from "@/components/Layout/WeatherBox.tsx";
-import { WEATHER_IMAGE_MAP_BUTTONS } from "@/constants/elements.ts";
+
 import useWeatherMap from "@/hooks/useWeatherMap.ts";
+
+import { WEATHER_IMAGE_MAP_BUTTONS } from "@/constants/elements.ts";
+
+import WeatherBox from "@/components/Layout/WeatherBox.tsx";
 
 const WeatherMap = () => {
   const { setCurrentImageMapType, ref } = useWeatherMap();

@@ -1,4 +1,5 @@
 import { NowWeatherType } from "@/types/weatherDataType.ts";
+
 import { WEATHER_API_KEY } from "@/constants/environment.ts";
 
 // 현재 날씨

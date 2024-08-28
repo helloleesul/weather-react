@@ -1,5 +1,7 @@
-import WeatherBox from "@/components/Layout/WeatherBox.tsx";
 import getWindDirectionLabel from "@/utils/getWindDirectionLabel.ts";
+
+import WeatherBox from "@/components/Layout/WeatherBox.tsx";
+
 import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const WeatherDetails = () => {

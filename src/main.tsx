@@ -1,9 +1,12 @@
 import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import "@/styles/index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import routes from "@/routes";
+
 import LoadingPage from "@/pages/LoadingPage.tsx";
+
+import "@/styles/index.css";
 
 const router = createBrowserRouter(routes);
 

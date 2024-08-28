@@ -1,7 +1,10 @@
-import { Outlet, useLocation } from "react-router-dom";
-import Header from "@/components/Layout/Header.tsx";
-import { ROUTES } from "@/routes/routes.ts";
 import { useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+
+import Header from "@/components/Layout/Header.tsx";
+
+import { ROUTES } from "@/routes/routes.ts";
+
 import { useWeatherStore } from "@/stores/useWeatherStore.ts";
 
 const backgroundStyle = {

@@ -1,5 +1,6 @@
-import { DayWeatherType } from "@/types/weatherDataType.ts";
 import getSameDay from "@/utils/getSameDay.ts";
+
+import { DayWeatherType } from "@/types/weatherDataType.ts";
 
 const DayItem = ({ dt, weather, temp }: DayWeatherType) => {
   const isSameDay = getSameDay(dt);
